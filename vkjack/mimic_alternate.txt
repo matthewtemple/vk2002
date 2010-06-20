@@ -1,0 +1,92 @@
+#include "vkjackMimic.h"
+#include "../vkmob/vkmobRandom.h"
+#include "vkjackHJ.h"
+
+vkjackMimic::vkjackMimic(vector< vector<int> > seqA_,
+  vector< vector<int> > seqB_) {
+
+  _seqA = seqA_;
+  _seqB = seqB_;
+  // add range checking for these:
+  _seqLength = _seqA.size();
+  _seqWidth = _seqA[0].size();
+}
+
+vkjackMimic::~vkjackMimic() {}
+
+float vkjackMimic::calcFitness(vkjackHJ hj_) {
+  vector< vector<int> >::iterator it;
+  float fitnessSum(0);
+  for (int f = 0; f <= (_seqLength - 1); f++) {
+    hj_.push(_seqA[f]);
+    hj_.pulse();
+    vector<int> hjOut = hj_.pop();
+    float fuzzEq(fuzzyEqual(hjOut, _seqB[f]));
+    fitnessSum += fuzzEq;
+  }
+  float fitness = (fitnessSum / _seqLength);
+  return fitness;
+}
+
+float vkjackMimic::fuzzyEqual(vector<int> a_, vector<int> b_) {
+  int same(0);
+  for (int j = 0; j <= (_seqWidth - 1); j++) {
+    if (a_[j] == b_[j]) {
+      same++;
+    }
+  }
+  return float(same) / _seqWidth;
+}
+
+vector<vkjackMimicAttempt> vkjackMimic::getAttempts() {
+  return _attempts;
+}
+
+float vkjackMimic::mimic() {
+  int brainDepth = 1;
+  while (brainDepth <= 32) {
+    vkjackHJ hj(_seqWidth, brainDepth);
+    cout << "brainDepth " << brainDepth << endl;
+
+    //float highFuzzEq(0);
+    //vkjackHJ highHJ(_seqWidth, brainDepth);
+
+    for (int tests = 0; tests <= (_seqLength * 1000); tests++) {
+      vkmobRandom* mobRand(vkmobRandom::instance());
+      int j = mobRand->randomLong() % _seqLength;
+      hj.push(_seqA[j]);
+      hj.pulse();
+      vector<int> hjOut = hj.pop();
+      float fuzzEq(fuzzyEqual(hjOut, _seqB[j]));
+
+      /*
+      if (fuzzEq < highFuzzEq) {
+        //cout << "reverting to " << highFuzzEq << " from " << fuzzEq << endl;
+        hj = highHJ;
+      } else {
+        highFuzzEq = fuzzEq;
+        highHJ = hj;
+        //cout << "jumped from " << highFuzzEq << " to " << fuzzEq << endl;
+
+        // set the aging factors as well...?
+      }
+      */
+
+      int boredomThresh(1);
+      boredomThresh = int(fuzzEq * brainDepth) * int(pow(brainDepth, 3));
+      hj.setBoredomThreshhold(boredomThresh);
+    }
+
+    float fitness = calcFitness(hj);
+    vkjackMimicAttempt attempt;
+    attempt.fitness = fitness;
+    attempt.hj = hj;
+    _attempts.insert(_attempts.end(), attempt);
+
+    brainDepth = brainDepth * 2;
+    //brainDepth++;
+  }
+
+  // pick best attempt, do more tests with that brain depth?
+
+}

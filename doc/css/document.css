@@ -1,0 +1,34 @@
+a {
+  color: #aa0;
+}
+
+body {
+  background-attachment: fixed;
+  background-color: purple;
+  background-image: url("http://localhost/virtuak/vk/image/texture/wave.jpg");
+  color: #aaa;
+  font-family: Verdana;
+  font-size: 8pt;
+  margin: 2px;
+}
+
+h3,h4,h5 {
+  letter-spacing: 1pt;
+  margin-bottom: 0em;
+}
+
+ul {
+  margin-bottom: 0em;
+  margin-top: 0em;
+}
+
+.bodyx {
+  background-color: black;
+  background-image: none;
+}
+
+.text {
+  color: #aaa;
+  font-family: Verdana;
+  font-size: 8pt;
+}

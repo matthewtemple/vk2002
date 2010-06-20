@@ -1,0 +1,7 @@
+include ../vk.mk
+srcs = 
+module:
+moduleClean:
+moduleDepend:
+moduleDependencies:
+	cd ../vkmob && $(MAKE)

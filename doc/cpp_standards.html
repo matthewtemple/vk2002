@@ -1,0 +1,13 @@
+do not return ostrstream.str() from a function that is supposed to return string.  It causes bus errors, at least on OS X.  create a string and set the string to ostrstream.str(), then return the string.
+
+
+order of include files
+in .h files:
+alphabetized by module and name, external modules coming first
+
+in .c files:
+first the h file that goes with the c file, then alphabetized by module name, external modules first
+
+watch out that g++ library strstream.str() returns a char*, not a string, like it's supposed to
+
+with multiple inheritance, bases are listed in alphabetical order

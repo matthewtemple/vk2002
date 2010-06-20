@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+require "vkmob.pl";
+
+$s = "virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso virtuoso";
+
+$q = vkmobTerminalFormat($s, 2);
+
+print "$q";

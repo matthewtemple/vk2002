@@ -1,0 +1,204 @@
+<html>
+<head>
+<title>sphere</title>
+<link href="../css/document.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h3>*virtuak development tasks</h3>
+
+<p>
+vk ( 
+<a href="#vkaos">aos</a> | 
+<a href="#vkapp">app</a> | 
+<a href="#vkcat">cat</a> | 
+<a href="#vkcgi">cgi</a> | 
+<a href="#vkcss">css</a> | 
+<a href="#vkef">ef</a> | 
+<a href="#vkfn">fn</a> | 
+<a href="#vkga">ga</a> | 
+<a href="#vkhtml">html</a> | 
+<a href="#vkice">ice</a> | 
+<a href="#vkih">ih</a> | 
+<a href="#vkipk">ipk</a> | 
+<a href="#vkjack">jack</a> | 
+<a href="#vkliz">liz</a> | 
+<a href="#vkmat">mat</a> | 
+<a href="#vkmob">mob</a> | 
+<a href="#vknn">nn</a> | 
+<a href="#vkphe">phe</a> | 
+<a href="#vkqc">qc</a> | 
+<a href="#vkqcs">qcs</a> | 
+<a href="#vkqcx">qcx</a> | 
+<a href="#vkrs">rs</a> | 
+<a href="#vksync">sync</a> | 
+<a href="#vktool">tool</a> | 
+<a href="#vkwww">www</a> )
+
+<p>
+<ul>
+<li>remove libgcrypt-1.1.7-vk folder from vk/library
+<li>create *virtuak development overview doc, processes, file locations, standard directory patterns
+<li>create C++ standards document
+<li>inlines
+<li>(2003) create *virtuak admin desktop, *virtuak sales desktop
+<li>once we're back in Linux
+  <ul>
+  <li>set up mySQL database
+  <li>set up php on apache development server
+  <li>set up various *virtuak desktops...make those appache-served so you can use mySQL to store *vk module information, ...
+  <li>change strings in vkhtmlML, vkiceAlgo to rope
+  </ul>
+<li>future module? paralleloram
+<li>xechelon
+</ul>
+
+<a name="vkcat"></a>
+<h4>vkcat</h4>
+<ul>
+<li>build
+<li>like Gibson's Realtree 7.0 from Idoru
+</ul>
+
+<a name="vkcgi"></a>
+<h4>vkcgi</h4>
+<ul>
+<li>build in C++ from old vk.pl
+<li>make a cgiApp's output internally redirectable to a file?
+</ul>
+
+<a name="vkef"></a>
+<h4>vkef</h4>
+<ul>
+<li>something to move closer to the visual representations of the cyberspace hallucination
+<li>figure0-like nexus
+<li>wordbowl extensions...storybowl-type stuff
+</ul>
+
+<a name="vkfn"></a>
+<h4>vkfn</h4>
+<ul>
+<li>build
+<li>bit box stuff
+</ul>
+
+<a name="vkhtml"></a>
+<h4>vkhtml</h4>
+<ul>
+<li>can rename to vkhtml if desired
+<li>vkhtmlText: make set() methods and constructors for rope
+  <li>implement with rope for storage? ... for when people input files
+<li>vkhtmlML: is there a more efficient way to implement the file reads in
+  insertFile(), appendFile() ?
+<li>vkhtmlML: make copy constructor
+<li>rename vkhtmlML >>> vkhtmlConcept or something
+</ul>
+
+<a name="vkice"></a>
+<h4>vkice</h4>
+<ul>
+<li>cryptographically strong random number generators
+</ul>
+
+<a name="vkih"></a>
+<h4>vkih</h4>
+<ul>
+<li>inhesion (w/ embedded hyperjacks)
+</ul>
+
+<a name="vkipk"></a>
+<h4>vkipk</h4>
+<ul>
+<li>smart password crackers...read corpii and generate probability trees for letter combinations, etc
+</ul>
+
+<a name="vkjack"></a>
+<h4>vkjack</h4>
+<ul>
+<li>vkjackMimic : the vector isn't probably the best way to store the attempts anymore...change it to an integerkey-attempt matching
+<li>make hyperjack customizable by descendant classes or through templates as to the operator set and the data set...so, inputs could be floats instead of {0,1} and another operator set could be inserted for the BoolBinOps
+<li>generalize hyperjack...create interfaces for specific functional interfaces
+<li>make a keyboard hyperjack
+<li>visualizations and mass interfaces for HyperJack...different HyperJack IOs...world-functioning HyperJacks
+</ul>
+
+<a name="vkmat"></a>
+<h4>vkmat</h4>
+<ul>
+<li>build vkmatGraph class
+</ul>
+
+<a name="vkmob"></a>
+<h4>vkmob</h4>
+<ul>
+<li>create vkmobFile
+<li>vkmobLog: could implement logging styles...that would change
+  timestamp format and/or re-arrange/format log output (like inserting line
+  breaks after 80th character, and other things)
+<li>vkmobLog: make copy constructor
+<li>vkmobLogDevice: make copy constructor
+</ul>
+
+<a name="vknn"></a>
+<h4>vknn</h4>
+<ul>
+<li>build
+</ul>
+
+<a name="vkphe"></a>
+<h4>vkphe</h4>
+<ul>
+<li>multi-bitbase stream analysis
+</ul>
+
+<a name="vkqc"></a>
+<h4>vkqc</h4>
+<ul>
+<li>vkqc: class: vkqcStrategy
+  <ul>
+  <li>vkqcAxis maintains a hash_map of these with respect to game for each atom
+  <li>when/how are strategies used?  what is the interface to a strategy?
+  </ul>
+<li>vkqcAtom: iterators for strategy to operate on all axes, all triangles, ...
+<li>vkqcAtom: [pure] virtual ostream<<
+  <ul>
+  <li>descendents [must] implement
+  </ul>
+<li>vkqcAtom: can there be standard way to << model data with descendants just
+  specifying the key, value pairs for beliefs, traits, and strategy knowledge?
+<li>vkqc: make copy constructors
+<li>vkqc: concept: goal
+<li>vkqc: autonaming for hypergons
+</ul>
+
+<a name="vkqcs"></a>
+<h4>vkqcs</h4>
+<ul>
+<li>vkqcs: model of the individual atom, and cgi-based interview forms
+<li>vkqcs: strategy classes for the first game, then run a first simulation
+<li>vkqcs: interview forms to automatically map/describe a hypergon...determine
+  from the participants a model of the hypergon...and this should be
+  periodically updatable...the system should ask for more or supporting
+  information when it needs it
+</ul>
+
+<a name="vkrs"></a>
+<h4>vkrs</h4>
+<ul>
+<li>build
+</ul>
+
+<a name="vksync"></a>
+<h4>vksync</h4>
+<ul>
+<li>build
+</ul>
+
+<a name="vkwww"></a>
+<h4>vkwww</h4>
+<ul>
+<li>create install/promotion script (can install to cert or prod)
+</ul>
+
+</body>
+</html>
